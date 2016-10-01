@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta charset="UTF-8"></meta>
+    <title>Angular Template</title>
+
+    <script>
+        //If the url does not have a slash at the end, append a slash so that relative pathing will work correctly.
+        if (window.location.pathname.slice(-1) !== '/') {
+            window.location.pathname = window.location.pathname.concat('/');
+        }
+    </script>
+
+    <!-- build:css styles/lib.css -->
+    <!-- bower:css -->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <!-- endbower -->
+    <!-- endbuild -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/app.css" />
+
+    <!-- build:js js/lib.js -->
+    <!-- bower:js -->
+    <!-- endbower -->
+    <!-- endbuild -->
+
+    <!-- build:js js/app.js -->
+    <!-- inject:js -->
+    <!-- endinject -->
+
+</head>
+
+<body>
+    <div ui-view="main"></div>
+</body>
+
+</html>
