@@ -2,7 +2,7 @@
 
 module.exports = function(gulp, config, plugins) {
   return {
-    deps: ['move_html', 'move_js'],
+    deps: ['move_html', 'move_js', 'move_img'],
     params: []
   };
 };

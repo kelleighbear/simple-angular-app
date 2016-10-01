@@ -1,28 +1,34 @@
 <div class="container">
     <div class="row">
-        <h3 class="text-center"> Kelleigh Maroney </h3>
+        <h3 class="text-center"> Contact Me </h3>
     </div>
 
     <hr class="row" />
     <br/>
     <div class="row">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <td><h4>E-mail</h4></td>
-                    <td><h4>Phone Number</h4></td>
-                    <td><h4>GitHub</h4></td>
-                    <td><h4>LinkedIn</h4></td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>kelleigh.maroney@gmail.com</td>
-                    <td>(978) 460 - 5536</td>
-                    <td><a href="https://github.com/kelleighbear">https://github.com/kelleighbear</a></td>
-                    <td><a href="https://www.linkedin.com/in/kelleigh-maroney-088135a7">https://www.linkedin.com/in/kelleigh-maroney-088135a7</a></td>
-                </tr>
-            </tbody>
-        </table>
+      <form role="form" name="contact.form" id="contact-form" ng-submit="contact.submitForm()" novalidate>
+        <div class="form-group">
+          <label>First name</label>
+          <input required type="text" class="form-control" ng-model="contact.formcontent.firstName">
+        </div>
+
+        <div class="form-group">
+          <label>Last Name</label>
+          <input required type="text" class="form-control" ng-model="contact.formcontent.lastName">
+        </div>
+
+        <div class="form-group">
+          <label>Email address</label>
+          <input required type="email" class="form-control" ng-model="contact.formcontent.emailAddress" ng-model-options="{ updateOn: 'blur' }">
+        </div>
+
+        <div class="form-group">
+          <label>Message</label>
+          <input required type="text" class="form-control" ng-model="contact.formcontent.message">
+        </div>
+
+        <button type="submit" class="btn btn-default" ng-disabled="contact.form.$invalid">Submit</button>
+        <button type="button" class="btn btn-default pull-right" ng-click="contact.clearForm()">Clear</button>
+      </form>
     </div>
 </div>

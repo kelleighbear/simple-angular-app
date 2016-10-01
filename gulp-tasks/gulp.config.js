@@ -53,6 +53,7 @@ module.exports = {
         vendor: [resourcePath + 'bower_components/**'],
 				js: [resourcePath + 'app/**/*.js'],
         html: [resourcePath + 'app/?*/**/*.html'],
+        img: [resourcePath + 'img/**/*'],
 				jsOrder: [
             '**/app.module.js',
             '**/*.module.js',

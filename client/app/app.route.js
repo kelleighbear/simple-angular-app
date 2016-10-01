@@ -33,6 +33,16 @@
                     }
                 }
             })
+            .state('root.login', {
+                url: 'login',
+                views: {
+                    'tab-content@root': {
+                        templateUrl: 'login/login.html',
+                        controller: 'LoginController',
+                        controllerAs: 'login'
+                    }
+                }
+            })
             .state('root.about', {
                 url: 'about',
                 views: {

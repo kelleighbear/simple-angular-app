@@ -6,8 +6,8 @@
 
   AboutController.$inject = [];
   function AboutController() {
-    var home = this;
-    home.message = 'This is the ABOUT page.';
+    var vm = this;
+    vm.message = 'About This Project';
   }
 
 })();
