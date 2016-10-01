@@ -4,8 +4,8 @@
     angular.module('app')
       .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$state', 'loginService', 'headerService'];
-    function LoginController($state, loginService, headerService) {
+    LoginController.$inject = ['$scope', '$state', 'loginService', 'headerService'];
+    function LoginController($scope, $state, loginService, headerService) {
       var vm = this;
 
       // Functions
@@ -17,13 +17,16 @@
 
       function login() {
         var success = function(response) {
-          headerService.setUser(vm.formcontent);
+          headerService.setUser(response);
           $state.go('^.home');
         };
 
         var error = function(reason) {
           vm.clearForm();
           vm.error = reason;
+          // In AngularJS the results of promise resolution are propagated asynchronously, inside a $digest cycle.
+          // So, callbacks registered with then() will only be called upon entering a $digest cycle.
+          $scope.$apply();
         };
 
         loginService.attemptLogin(vm.formcontent).then(success, error);

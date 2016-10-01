@@ -8,7 +8,13 @@
 
     <div class="row">
       <form role="form" name="login.form" id="login-form" ng-submit="login.login()" novalidate>
-        <div ng-show="login.error" class="error-message form-control">
+        <div class="well success-well">
+          <h4>Valid Logins</h4>
+          kelleigh.maroney@gmail.com / derp123<br>
+          frodo@gmail.com / hell0W0rld
+        </div>
+
+        <div ng-show="login.error" class="well error-well">
           {{login.error}}
         </div>
 

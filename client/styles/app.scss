@@ -10,8 +10,21 @@
   background: #FFCFD0;
 }
 
-.error-message {
+.success-well {
+  background: #ECFFEC;
+  border: 1px solid green;
+}
+
+.error-well {
   background: #FFCFD0;
   border: 1px solid red;
   margin-bottom: 10px;
+}
+
+.dropdown-menu {
+  min-width: 100px; // To override Bootstrap's min-width of 160px, which may be too wide.
+  width: 100%;
+  a {
+    padding-left: 10px;
+  }
 }

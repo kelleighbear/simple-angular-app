@@ -7,12 +7,12 @@
   HeaderController.$inject = ['headerService'];
   function HeaderController(headerService) {
     var vm = this;
-    vm.user = headerService.getUser();
     vm.isLoggedIn = isLoggedIn;
     vm.logout = logout;
 
     function isLoggedIn() {
-      return headerService.getUser() ? true : false;
+      vm.user = headerService.getUser();
+      return vm.user ? true : false;
     }
 
     function logout() {

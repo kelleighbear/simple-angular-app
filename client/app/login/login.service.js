@@ -12,10 +12,12 @@
       };
 
       var validUsers = [{
+        name: 'Kelleigh Maroney',
         emailAddress: 'kelleigh.maroney@gmail.com',
         password: 'derp123'
       }, {
-        emailAddress: 'bob@gmail.com',
+        name: 'Frodo Baggins',
+        emailAddress: 'frodo@gmail.com',
         password: 'hell0W0rld'
       }]
 
@@ -23,7 +25,11 @@
         var index = _.map(validUsers, 'emailAddress').indexOf(formcontent.emailAddress);
         if(index !== -1) {
           if(validUsers[index].password === formcontent.password) {
-            return Promise.resolve('Login Successful');
+            var user = {
+              name: validUsers[index].name,
+              emailAddress: validUsers[index].emailAddress
+            }
+            return Promise.resolve(user);
           } else {
             return Promise.reject('Incorrect Password');
           }
