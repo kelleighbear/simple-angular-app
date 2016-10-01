@@ -2,10 +2,10 @@
   'use strict';
 
     angular.module('app')
-        .service('loginService', loginService);
+        .factory('loginFactory', loginFactory);
 
-    loginService.$inject = ['$http'];
-    function loginService($http) {
+    loginFactory.$inject = ['$http'];
+    function loginFactory($http) {
 
       var exports = {
         attemptLogin: attemptLogin
@@ -14,7 +14,7 @@
       var validUsers = [{
         name: 'Kelleigh Maroney',
         emailAddress: 'kelleigh.maroney@gmail.com',
-        password: 'derp123'
+        password: 'password'
       }, {
         name: 'Frodo Baggins',
         emailAddress: 'frodo@gmail.com',
@@ -31,10 +31,10 @@
             }
             return Promise.resolve(user);
           } else {
-            return Promise.reject('Incorrect Password');
+            return Promise.reject('Invalid Email/Password Combination');
           }
         } else {
-          return Promise.reject('No User with this Email Address Exists');
+          return Promise.reject('Invalid Email/Password Combination');
         }
       }
 

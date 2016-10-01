@@ -4,8 +4,8 @@
     angular.module('app')
       .controller('LoginController', LoginController);
 
-    LoginController.$inject = ['$scope', '$state', 'loginService', 'headerService'];
-    function LoginController($scope, $state, loginService, headerService) {
+    LoginController.$inject = ['$scope', '$state', 'loginFactory', 'headerFactory'];
+    function LoginController($scope, $state, loginFactory, headerFactory) {
       var vm = this;
 
       // Functions
@@ -17,7 +17,7 @@
 
       function login() {
         var success = function(response) {
-          headerService.setUser(response);
+          headerFactory.setUser(response);
           $state.go('^.home');
         };
 
@@ -29,7 +29,7 @@
           $scope.$apply();
         };
 
-        loginService.attemptLogin(vm.formcontent).then(success, error);
+        loginFactory.attemptLogin(vm.formcontent).then(success, error);
       }
 
       function clearForm() {

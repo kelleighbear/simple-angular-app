@@ -4,19 +4,19 @@
   angular.module('app')
     .controller('HeaderController', HeaderController);
 
-  HeaderController.$inject = ['headerService'];
-  function HeaderController(headerService) {
+  HeaderController.$inject = ['headerFactory'];
+  function HeaderController(headerFactory) {
     var vm = this;
     vm.isLoggedIn = isLoggedIn;
     vm.logout = logout;
 
     function isLoggedIn() {
-      vm.user = headerService.getUser();
+      vm.user = headerFactory.getUser();
       return vm.user ? true : false;
     }
 
     function logout() {
-      headerService.setUser(null);
+      headerFactory.setUser(null);
       vm.user = null;
     }
   }

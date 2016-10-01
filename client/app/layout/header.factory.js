@@ -2,10 +2,10 @@
   'use strict';
 
     angular.module('app')
-        .service('headerService', headerService);
+        .factory('headerFactory', headerFactory);
 
-    headerService.$inject = ['$http'];
-    function headerService($http) {
+    headerFactory.$inject = ['$http'];
+    function headerFactory($http) {
 
       var user = null;
 
