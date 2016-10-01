@@ -31,10 +31,10 @@
             }
             return Promise.resolve(user);
           } else {
-            return Promise.reject('Invalid Email/Password Combination');
+            return Promise.reject('Invalid Email/Password Combination.');
           }
         } else {
-          return Promise.reject('Invalid Email/Password Combination');
+          return Promise.reject('Invalid Email/Password Combination.');
         }
       }
 
