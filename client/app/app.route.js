@@ -19,7 +19,9 @@
                         templateUrl: 'layout/shell.html'
                     },
                     'header@root': {
-                        templateUrl: 'layout/header.html'
+                        templateUrl: 'layout/header.html',
+                        controller: 'HeaderController',
+                        controllerAs: 'header'
                     }
                 }
             })

@@ -6,7 +6,7 @@
 
   HomeController.$inject = [];
   function HomeController() {
-    var home = this;
-    home.message = 'Simple Angular Project';
+    var vm = this;
+    vm.message = 'Simple Angular Project';
   }
 })();

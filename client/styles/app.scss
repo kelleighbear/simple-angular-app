@@ -2,11 +2,16 @@
   font-family: 'Roboto', sans-serif;
 }
 
-[type="text"].ng-dirty.ng-valid,[type="email"].ng-dirty.ng-valid {
+[type="text"].ng-dirty.ng-valid,[type="email"].ng-dirty.ng-valid,[type="password"].ng-dirty.ng-valid {
   background: #ECFFEC;
-  position: relative;
 }
 
-[type="text"].ng-dirty.ng-invalid,[type="email"].ng-dirty.ng-invalid {
+[type="text"].ng-dirty.ng-invalid,[type="email"].ng-dirty.ng-invalid,[type="password"].ng-dirty.ng-invalid {
   background: #FFCFD0;
+}
+
+.error-message {
+  background: #FFCFD0;
+  border: 1px solid red;
+  margin-bottom: 10px;
 }
