@@ -50,7 +50,8 @@
         "wiredep": "^2.2.2"
     },
     "scripts": {
-        "start": "gulp heroku:production"
+        "start": "gulp serveprod",
+        "postinstall": "gulp heroku:production"
     },
     "private": true
 }
