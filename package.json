@@ -2,6 +2,7 @@
     "name": "simple-angular-project",
     "version": "0.0.0",
     "dependencies": {
+        "bower": "1.7.9",
         "bower-files": "^3.14.1",
         "browser-sync": "^2.15.0",
         "del": "^2.2.2",
